@@ -1,3 +1,5 @@
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "sugar")
+Ingredient.create(name: "tequila")
+Ingredient.create(name: "vodka")
+Ingredient.create(name: "rum")
+Ingredient.create(name: "gim")

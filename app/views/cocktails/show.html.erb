@@ -1,8 +1,41 @@
-<div class="container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{drinks},{<%=@cocktail.name%>})">
+<div class="container p-5">
+  <div class="card-category card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 300, crop: :fill %>')">
     <%= @cocktail.name %>
   </div>
+  <div class="container">
   <%= link_to 'Back', root_path, class: 'btn btn-ghost mt-3' %>
+  </div>
 </div>
 
-
+<div class="container p-5">
+  <div class="row">
+    <div class="col-6 new-form">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <% if @dose.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @dose.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.input :description %>
+        <%= f.association :ingredient  %>
+        <%= f.button :submit, value: 'Add', class: 'btn btn-ghost' %>
+      <% end %>
+    </div>
+    <div class="col-6">
+      <% @cocktail.doses.each do |dose| %>
+      <div class="card-product my-2 rounded">
+        <%= cl_image_tag(dose.cocktail.photo) %>
+        <div class="card-product-infos">
+          <h2>Dose</h2>
+          <p><%= dose.description %></p>
+          <p><%= dose.ingredient.name %></p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
