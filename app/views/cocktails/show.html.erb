@@ -31,8 +31,9 @@
         <%= cl_image_tag(dose.cocktail.photo) %>
         <div class="card-product-infos">
           <h2>Dose</h2>
-          <p><%= dose.description %></p>
-          <p><%= dose.ingredient.name %></p>
+          <p>Qtd: <strong> <%= dose.description %></strong></p>
+          <p>Ingredient: <strong><%= dose.ingredient.name.capitalize %></strong></p>
+          <p><%= @cocktail.name %></p>
         </div>
       </div>
     <% end %>
