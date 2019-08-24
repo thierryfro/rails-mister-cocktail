@@ -20,6 +20,7 @@
             </ul>
           </div>
         <% end %>
+        <h5 class="text-center">Create a dose</h5>
         <%= f.input :description %>
         <%= f.association :ingredient  %>
         <%= f.button :submit, value: 'Add', class: 'btn btn-ghost' %>
