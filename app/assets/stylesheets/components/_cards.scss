@@ -21,6 +21,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .card-product img {
@@ -45,6 +46,17 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-info-del {
+  position: absolute;
+  top: 3px;
+  right: 15px;
+  opacity: 0.2;
+}
+
+.card-info-del:hover {
+  opacity: 0.8;
 }
 
 
