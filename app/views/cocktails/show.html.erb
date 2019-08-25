@@ -9,7 +9,7 @@
 
 <div class="container p-5">
   <div class="row">
-    <div class="col-6 new-form">
+    <div class="col-xs-12 col-sm-6 new-form">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
         <% if @dose.errors.any? %>
           <div class="errors-container">
@@ -26,7 +26,7 @@
         <%= f.button :submit, value: 'Add', class: 'btn btn-ghost' %>
       <% end %>
     </div>
-    <div class="col-6">
+    <div class="col-xs-12 col-sm-6">
       <% @cocktail.doses.each do |dose| %>
       <div class="card-product my-2 rounded">
         <%= cl_image_tag(dose.cocktail.photo) %>
